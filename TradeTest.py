@@ -1,3 +1,4 @@
+#Aksje simulation med giring, henter live data fra aksjemarkedet, og viser gevinst/tap
 import tkinter as tk
 import yfinance as yf
 import time
@@ -32,7 +33,7 @@ def main():
     else:
         levAmount = 1
     
-    #Laster ned aksje data og henter bare prisen
+    #Laster ned aksje data og henter bare prisen, Bruker Aksje symbol for å hente data
     df = yf.download(stock, interval="1m")
     startPrice = df["Close"].iloc[-1]
     #Lager en thread for selve aksje kjøpet/salget, for å oppdatere UI 
